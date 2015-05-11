@@ -82,6 +82,13 @@ ngSoundManager.factory('angularPlayer', ['$rootScope', '$log',
                                 //get the service.
                                 var angularPlayer = injector.get('angularPlayer');
                                 $rootScope.$broadcast('track:finished', currentTrack);
+                                
+                                var playlist = angularPlayer.getPlaylist();
+                                var playlistLast = playlist.length - 1;
+                                if (playlist[playlistLast].id == currentTrack) {
+                                    $rootScope.$broadcast('sequence:finished', currentTrack);
+                                }
+
                                 angularPlayer.nextTrack();
                                 $rootScope.$broadcast('track:id', currentTrack);
                             }
