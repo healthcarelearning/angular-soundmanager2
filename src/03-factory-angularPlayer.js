@@ -90,7 +90,7 @@ ngSoundManager.factory('angularPlayer', ['$rootScope', '$log',
                                 }
 
                                 angularPlayer.nextTrack();
-                                $rootScope.$broadcast('track:id', currentTrack);
+                                //$rootScope.$broadcast('track:id', currentTrack);
                             }
                         }
                     }
